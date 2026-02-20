@@ -1,0 +1,151 @@
+<!DOCTYPE html><html><head>
+  <title>Lapor PB</title>
+  
+  <link rel="stylesheet" type="text/css" href="css/stylev3.css?v=20260220-2">
+<script defer="" data-domain="laporpb.tiiny.site" src="js/plausible.js?v=20260220-2"></script><script type="text/javascript" src="js/ad-script.js?v=20260220-2"></script><script defer="" data-domain="laporpb.tiiny.site" src="js/plausible.js?v=20260220-2"></script><script type="text/javascript" src="js/ad-script.js?v=20260220-2"></script></head>
+<body onload="focusPembukaan()">
+  <h1>Lapor PB</h1>
+  <form>
+      <div class="radio-group">
+    <div class="radio-item">
+      <input type="radio" id="al-anak" name="unit" value="AL-ANAK">
+      <label for="al-anak">AL-ANAK</label>
+    </div>
+    <div class="radio-item">
+      <input type="radio" id="al-picu" name="unit" value="AL-PICU">
+      <label for="al-picu">AL-PICU</label>
+    </div>
+    <div class="radio-item">
+      <input type="radio" id="iso" name="unit" value="ISO">
+      <label for="iso">ISO</label>
+    </div>
+  </div>
+    <label for="pembukaan" class="form-label">Pembukaan:</label>
+    <input type="text" id="pembukaan" class="form-input"><br>
+
+    <label for="nama" class="form-label">Nama:</label>
+    <input type="text" id="nama" class="form-input"><br>
+
+    <label for="cm" class="form-label">CM:</label>
+    <input type="number" id="cm" class="form-input"><br>
+
+    <label for="tgl_lahir" class="form-label">Tanggal Lahir:</label>
+    <select id="tanggal" class="form-input">
+      <option value="">Tanggal</option>
+    </select>
+    <select id="bulan" class="form-input">
+      <option value="">Bulan</option>
+    </select>
+    <select id="tahun" class="form-input">
+      <option value="">Tahun</option>
+    </select>
+    <br>
+
+    <label for="jenis_kelamin" class="form-label">Jenis Kelamin:</label>
+    <select id="jenis_kelamin" class="form-input">
+      <option value="Laki-laki">Laki-laki</option>
+      <option value="Perempuan">Perempuan</option>
+    </select><br>
+
+    <label for="diagnosa" class="form-label">Diagnosa:</label>
+    <input type="text" id="diagnosa" class="form-input"><br>
+
+    <label for="antibiotik" class="form-label">Antibiotik:</label>
+    <input type="text" id="antibiotik" class="form-input"><br>
+
+    <label for="kepesertaan" class="form-label">Kepesertaan:</label>
+    <select id="kepesertaan" class="form-input">
+      <option value="BPJS">BPJS</option>
+      <option value="R/ BPJS">R/ BPJS</option>
+      <option value="SKTM">SKTM</option>
+      <option value="UMUM">UMUM</option>
+      
+    </select><br>
+
+    <label for="berat_badan" class="form-label">Berat Badan:</label>
+    <input type="number" id="berat_badan" class="form-input"><br>
+    
+    <label for="tinggi_badan" class="form-label">Tinggi Badan:</label>
+    <input type="number" id="tinggi_badan" class="form-input"><br>
+
+    <label for="dpjp" class="form-label">DPJP:</label>
+    <select id="dpjp" class="form-input">
+      <option value="">DPJP</option>
+      <option value="dr. Aziz, Sp.A">dr. Aziz, Sp.A</option>
+      <option value="dr. Indira, Sp.A">dr. Indira, Sp.A</option>
+      <option value="dr. Dea, Sp.A">dr. Dea, Sp.A</option>
+    </select><br>
+
+    <h2>Hasil Lab:</h2>
+    <label for="hb" class="form-label">Hemoglobin:</label>
+    <input type="number" id="hb" class="form-input" step="0.01" min="0"><br>
+
+    <label for="l" class="form-label">Leukosit:</label>
+    <input type="number" id="l" class="form-input" step="0.01" min="0"><br>
+
+    <label for="pcv" class="form-label">Hematokrit:</label>
+    <input type="number" id="pcv" class="form-input" step="0.01" min="0"><br>
+
+    <label for="tr" class="form-label">Trombosit:</label>
+    <input type="number" id="tr" class="form-input" step="0.01" min="0"><br>
+
+
+    <div class="form-group">
+      <label for="lain" class="form-label-lain">Lain-lain:</label>
+      <textarea id="lain" class="form-input-lain" placeholder="Misal Elektrolit, Widal dll..." rows="5"></textarea>
+    </div>
+    
+  
+  
+    <label for="penutup" class="form-label">Penutup:</label>
+    <input type="text" id="penutup" class="form-input"><br>
+
+    <button type="button" onclick="prosesLapor()">Proses</button>
+  </form>
+
+  <h2>Hasil:</h2>
+  <textarea id="hasil" rows="7" cols="36" readonly=""></textarea> <br>
+  <button type="button" onclick="salinHasil()">Salin</button>
+  <div class="created-by">
+    <p>Created by Zerone</p>
+  </div>
+  
+  <!-- JavaScript includes -->
+  <script src="js/script.js?v=20260220-2"></script>
+  <script src="js/salinhasil.js?v=20260220-2"></script>
+  <script src="js/datepicker.js?v=20260220-2"></script>
+  <script src="js/calculateAge.js?v=20260220-2"></script>
+  <script src="js/encodeFormData.js?v=20260220-2"></script>
+  <script src="js/formatDate.js?v=20260220-2"></script>
+  <script src="js/tgl.js?v=20260220-2"></script>
+
+  <script>
+    // Bersihkan nilai input saat halaman dimuat
+    document.addEventListener("DOMContentLoaded", function() {
+        document.getElementById("pembukaan").value = "";
+        document.getElementById("nama").value = "";
+        document.getElementById("cm").value = "";
+        document.getElementById("tanggal").value = "";
+        document.getElementById("bulan").value = "";
+        document.getElementById("tahun").value = "";
+        document.getElementById("jenis_kelamin").value = "Laki-laki"; // Default value
+        document.getElementById("diagnosa").value = "";
+        document.getElementById("antibiotik").value = "";
+        document.getElementById("kepesertaan").value = "BPJS"; // Default value
+        document.getElementById("berat_badan").value = "";
+        document.getElementById("tinggi_badan").value = "";
+        document.getElementById("dpjp").value = "";
+        document.getElementById("penutup").value = "";
+        document.getElementById("hasil").value = "";
+        document.getElementById("hb").value = "";
+        document.getElementById("l").value = "";
+        document.getElementById("pcv").value = "";
+        document.getElementById("tr").value = "";
+        document.getElementById("lain").value = "";
+    });
+  </script>
+
+
+
+
+</body></html>

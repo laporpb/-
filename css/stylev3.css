@@ -1,0 +1,130 @@
+body {
+  background-color: #f0f8ff; /* Light blue background */
+  font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+  color: #333; /* Darker color for headings */
+}
+
+.form-label {
+  display: inline-block;
+  width: 120px;
+  margin-bottom: 5px;
+  color: #555; /* Dark grey for labels */
+}
+
+.form-input {
+  width: 180px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px; /* Rounded corners */
+  transition: border-color 0.3s; /* Smooth transition */
+}
+
+.form-input:focus {
+  border-color: #66afe9; /* Blue border on focus */
+  outline: none; /* Remove default outline */
+}
+
+button {
+  background-color: #28a745; /* Green button */
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s; /* Smooth transition */
+}
+
+button:hover {
+  background-color: #218838; /* Darker green on hover */
+}
+
+textarea {
+  width: 300px; /* Full width for textarea */
+  height: 100px; /* Set height */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  resize: none; /* Disable resizing */
+}
+
+textarea:focus {
+  border-color: #66afe9; /* Blue border on focus */
+  outline: none;
+}
+#tanggal, #bulan, #tahun {
+  display: inline-block;
+  width: 63.8px; /* Adjust the width to match the input boxes */
+  height: 34px; /* Set height to match the input boxes */
+  margin-bottom: 5px;
+  padding: 5px;
+  box-sizing: border-box; /* Ensures the padding doesn't increase width */
+  vertical-align: middle; /* Ensures vertical alignment with other fields */
+}
+
+#jenis_kelamin, #kepesertaan, #dpjp {
+  height: 34px; /* Set a consistent height for all select elements */
+  margin-bottom: 5px;
+  padding: 5px;
+  width: 205px;
+  box-sizing: border-box;
+  vertical-align: middle;
+}
+
+.form-label-lain {
+  display: inline-block;
+  width: 120px; /* Adjust the width if needed */
+  color: #555; /* Dark grey for labels */
+  vertical-align: top; /* Align the label with the top of the textarea */
+}
+
+.form-input-lain {
+  width: 200px;
+  text-align: left;
+  padding: 5px;
+  box-sizing: border-box;
+}
+.created-by {
+  text-align: center;
+  margin-top: 20px; /* Add some space above it */
+  margin-bottom: 20px; /* Add space below it */
+  font-size: 10px; /* Small font size */
+  color: #888; /* Light gray color */
+}
+/* Membuat kedua kotak sejajar secara horizontal dengan jarak di antara keduanya */
+.radio-group {
+  display: flex;
+  gap: 1.2rem;            /* Jarak horizontal antar kotak */
+  margin-bottom: 15px;  /* Jarak ke elemen berikutnya */
+}
+
+/* Hilangkan lingkaran radio bawaan browser */
+.radio-item input[type="radio"] {
+  display: none;
+}
+
+/* Label sebagai “kotak” yang diklik */
+.radio-item label {
+  display: block;               /* Memudahkan atur lebar/tinggi */
+  text-align: center;           /* Teks di tengah (opsional) */
+  border: 2px solid #ccc;       /* Border awal (2px agar tebalnya sama) */
+  border-radius: 4px;           /* Sudut agak melengkung (opsional) */
+  padding: 10px;                /* Ruang dalam kotak */
+  cursor: pointer;              /* Kursor berubah jadi 'tangan' */
+  box-sizing: border-box;       /* Pastikan padding + border dihitung total */
+  transition: border-color 0.2s, background-color 0.2s;
+}
+
+/* Gaya kotak saat radio button terpilih */
+.radio-item input[type="radio"]:checked + label {
+  background-color: #e96eeb;  /* Warna latar saat dipilih */
+  border-color: #333;         /* Ganti warna border saat dipilih */
+}
+
+#hasil {
+  overflow-y: scroll; /* Aktifkan scrollbar vertikal */
+  max-height: 150px; /* Batasi tinggi agar scroll bisa terlihat */
+  resize: none; /* Cegah resize manual */
+}
