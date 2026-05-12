@@ -92,7 +92,7 @@ function prosesLapor() {
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4) {
       if (this.status == 200) {
-        alert("Data berhasil terkirim ke Tab " + unit);
+        //alert("Data berhasil terkirim ke Tab " + unit);
       } else {
         alert("Gagal mengirim data. Cek koneksi atau URL Script.");
       }
