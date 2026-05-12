@@ -94,7 +94,7 @@ function prosesLapor() {
     }
   };
 
-  var url_anak = "https://script.google.com/macros/s/AKfycbzYUfKoQjbw-qVfjYqHUvVaYMl2BRnbnKY2D_8XRAAL1Ml1KiVBCwz8ZWHN0t5GP_GC/exec";
+  var url_anak = "https://script.google.com/macros/s/AKfycby8WbhByYCefLYqS1qh-uPb5udw1LCIh-0ebUZ8TbbTmKt-KH5WEIJHl8g90TlN8D1y/exec";
   var url_picu = "https://script.google.com/macros/s/AKfycbxFNJLZY3KQVBeSIWmU7WNtP9bLWWfoEFRwz49TRR3Lie1WoKWeRVkES_sBWu1L68s_/exec";
   var url_iso = "https://script.google.com/macros/s/AKfycbxD690T_pdyydhCgW8gIX6AHfYkJz0K9lAe_spNrapWE3mdduR08WhGWo_UCYQoXGmZ/exec";
 
